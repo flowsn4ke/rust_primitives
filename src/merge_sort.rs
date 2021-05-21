@@ -76,7 +76,7 @@ mod sorting {
 }
 
 #[cfg(test)]
-mod benching {
+mod benching_merge_sort {
     use rand::{thread_rng, Rng};
     use test::Bencher;
     extern crate test;
