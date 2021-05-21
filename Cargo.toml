@@ -1,0 +1,18 @@
+cargo-features = ["test-dummy-unstable"]
+
+[package]
+name = "rust_algs"
+version = "0.1.0"
+authors = [
+    "Théophile Louvel <66867063+theophilelouvel@users.noreply.github.com>",
+]
+edition = "2018"
+im-a-teapot = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.3"
+
+# [unstable]
+# allow-features = true
