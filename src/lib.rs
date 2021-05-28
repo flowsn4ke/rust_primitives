@@ -1,6 +1,9 @@
 #![feature(test)]
+#![feature(drain_filter)]
+#![feature(destructuring_assignment)]
 
-pub mod inversion_count;
-pub mod merge_sort;
-pub use inversion_count::inversion_count;
-pub use merge_sort::merge_sort;
+pub mod graphs;
+pub mod permutations;
+pub mod sorting;
+pub use permutations::inversion_count;
+pub use sorting::{merge_sort, quick_sort};

@@ -3,21 +3,21 @@ where
     T: PartialOrd + Copy,
 {
     let length = input.len();
-    // Our base case
+
     if length < 2 {
         return;
     }
-    // We split the input into two more slices
+
     let (left, right) = input.split_at_mut(length / 2);
-    // We recursively sort
+
     merge_sort(left);
     merge_sort(right);
 
     let mut left_iter = left.iter().peekable();
     let mut right_iter = right.iter().peekable();
-    // We create a vector to temporarily hold the sorted values
+
     let mut sorted: Vec<T> = Vec::with_capacity(length);
-    // We push values in order
+
     while let (Some(&x), Some(&y)) = (left_iter.peek(), right_iter.peek()) {
         if *x < *y {
             sorted.push(*left_iter.next().unwrap())
@@ -25,14 +25,14 @@ where
             sorted.push(*right_iter.next().unwrap())
         }
     }
-    // We push whatever is left
+
     for x in left_iter {
         sorted.push(*x)
     }
     for y in right_iter {
         sorted.push(*y)
     }
-    // We rewrite the vector in place
+
     input
         .iter_mut()
         .enumerate()
@@ -89,7 +89,7 @@ mod benching_merge_sort {
         let mut numbers = Vec::<i32>::with_capacity(length);
 
         for _ in 0..length {
-            numbers.push(rng.gen_range(0..100));
+            numbers.push(rng.gen_range(0..10000));
         }
 
         b.iter(|| {

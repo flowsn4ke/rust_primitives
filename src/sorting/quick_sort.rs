@@ -78,7 +78,7 @@ mod benching_quick_sort {
         let mut numbers = Vec::<i32>::with_capacity(length);
 
         for _ in 0..length {
-            numbers.push(rng.gen_range(0..100));
+            numbers.push(rng.gen_range(0..10000));
         }
 
         b.iter(|| {
